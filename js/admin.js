@@ -61,11 +61,69 @@ onAuthStateChanged(auth, async (user)=>{
     document.getElementById("departmentName").textContent =
         data.department;
 
-
+    loadDashboardStats(data.department);
 
 });
 
+async function loadDashboardStats(department){
 
+
+    const usersRef = collection(db,"users");
+
+    const usersSnapshot = await getDocs(usersRef);
+
+
+    let members = 0;
+
+    let dispatchers = 0;
+
+
+
+    usersSnapshot.forEach((user)=>{
+
+        const data = user.data();
+
+
+        if(data.department === department){
+
+            members++;
+
+
+            if(data.role === "dispatcher"){
+
+                dispatchers++;
+
+            }
+
+        }
+
+
+    });
+
+
+
+    document.getElementById("memberCount").textContent =
+        members;
+
+
+    document.getElementById("dispatcherCount").textContent =
+        dispatchers;
+
+
+
+
+    const apparatusRef = collection(db,"apparatus");
+
+
+    const apparatusSnapshot = await getDocs(apparatusRef);
+
+
+
+    document.getElementById("apparatusCount").textContent =
+        apparatusSnapshot.size;
+
+
+}
 
 document.getElementById("logout").onclick = ()=>{
 
