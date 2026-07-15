@@ -10,11 +10,13 @@
 
     align-items: center;
 
+    padding: 20px;
+
 }
 
 
 
-.login-box {
+.login-card {
 
     background: #1e2329;
 
@@ -28,11 +30,13 @@
 
     border-top: 5px solid #b91c1c;
 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+
 }
 
 
 
-.login-box h1 {
+.login-card h1 {
 
     color: #ffffff;
 
@@ -40,13 +44,13 @@
 
     text-align: center;
 
-    margin-bottom: 5px;
+    margin: 0 0 5px;
 
 }
 
 
 
-.login-box p {
+.subtitle {
 
     color: #cbd5e1;
 
@@ -58,7 +62,15 @@
 
 
 
-.login-box label {
+.input-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.input-group label {
 
     color: #f1f5f9;
 
@@ -66,17 +78,17 @@
 
     margin-bottom: 6px;
 
+    font-size: 14px;
+
 }
 
 
 
-.login-box input {
+.input-group input {
 
     width: 100%;
 
     padding: 12px;
-
-    margin-bottom: 20px;
 
     background: #121417;
 
@@ -92,7 +104,17 @@
 
 
 
-.login-box button {
+.input-group input:focus {
+
+    outline: none;
+
+    border-color: #b91c1c;
+
+}
+
+
+
+.login-card button {
 
     width: 100%;
 
@@ -114,8 +136,20 @@
 
 
 
-.login-box button:hover {
+.login-card button:hover {
 
     background: #ef4444;
+
+}
+
+
+
+#errorMessage {
+
+    color: #ef4444;
+
+    text-align: center;
+
+    margin-top: 15px;
 
 }
