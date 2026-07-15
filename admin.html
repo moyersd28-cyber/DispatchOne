@@ -12,44 +12,126 @@
 <div class="admin-container">
 
 
-<header>
+<header class="admin-header">
 
-<h1>DispatchOne Administration</h1>
+    <h1>DispatchOne Administration</h1>
 
-<p id="departmentName">
-Loading Department...
-</p>
+    <p id="departmentName">
+        Loading Department...
+    </p>
 
 </header>
 
 
 
-<section class="dashboard-card">
+<section class="status-panel">
+
+    <h2>System Status</h2>
+
+    <div class="status-grid">
+
+        <div class="status-box">
+            <h3>Authentication</h3>
+            <p class="online">
+                ONLINE
+            </p>
+        </div>
 
 
-<h2>Administration Center</h2>
+        <div class="status-box">
+            <h3>Database</h3>
+            <p class="online">
+                ONLINE
+            </p>
+        </div>
 
 
-<div class="admin-buttons">
+    </div>
+
+</section>
+
+
+
+
+<section class="overview-panel">
+
+<h2>Department Overview</h2>
+
+
+<div class="overview-grid">
+
+
+<div class="stat-card">
+
+<h3>Members</h3>
+
+<span id="memberCount">
+0
+</span>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<h3>Apparatus</h3>
+
+<span id="apparatusCount">
+0
+</span>
+
+</div>
+
+
+
+
+<div class="stat-card">
+
+<h3>Dispatchers</h3>
+
+<span id="dispatcherCount">
+0
+</span>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="actions-panel">
+
+
+<h2>Quick Actions</h2>
+
+
+<div class="action-grid">
 
 
 <button>
-👥 User Management
+Create Member
 </button>
 
 
 <button>
-🚒 Apparatus Management
+Manage Apparatus
 </button>
 
 
 <button>
-⚙ Department Settings
+Department Settings
 </button>
 
 
 <button>
-📡 Dispatch Configuration
+Activity Log
 </button>
 
 
@@ -57,6 +139,7 @@ Loading Department...
 
 
 </section>
+
 
 
 
@@ -70,6 +153,7 @@ Logout
 
 
 <script type="module" src="js/admin.js"></script>
+
 
 </body>
 </html>
