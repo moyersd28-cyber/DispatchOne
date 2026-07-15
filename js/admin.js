@@ -61,7 +61,6 @@ onAuthStateChanged(auth, async (user)=>{
     document.getElementById("departmentName").textContent =
         data.department;
 
-    console.log("Loading stats for:", data.department);
 
 loadDashboardStats(data.department);
 
@@ -69,7 +68,6 @@ loadDashboardStats(data.department);
 
 async function loadDashboardStats(department){
 
-console.log("Dashboard stats started");
     
     const usersRef = collection(db,"users");
 
@@ -96,7 +94,6 @@ console.log("Dashboard stats started");
 
                 dispatchers++;
                 
-                console.log(user.data());
 
             }
 
