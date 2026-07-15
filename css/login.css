@@ -10,41 +10,52 @@
 
     align-items: center;
 
+    background:
+        radial-gradient(
+            circle at top,
+            #2b3138 0%,
+            #121417 55%
+        );
+
     padding: 20px;
 
 }
 
 
-
 .login-card {
+
+    width: 400px;
 
     background: #1e2329;
 
-    width: 380px;
+    padding: 45px;
 
-    padding: 40px;
-
-    border-radius: 10px;
+    border-radius: 12px;
 
     border: 1px solid #3f4650;
 
-    border-top: 5px solid #b91c1c;
+    border-top: 6px solid #b91c1c;
 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.5);
 
 }
 
 
 
+/* Title */
+
 .login-card h1 {
 
-    color: #ffffff;
+    margin: 0;
 
-    font-size: 36px;
+    text-align:center;
 
-    text-align: center;
+    color:#ffffff;
 
-    margin: 0 0 5px;
+    font-size:42px;
+
+    letter-spacing:2px;
 
 }
 
@@ -52,33 +63,38 @@
 
 .subtitle {
 
-    color: #cbd5e1;
+    text-align:center;
 
-    text-align: center;
+    color:#94a3b8;
 
-    margin-bottom: 30px;
+    margin-top:8px;
+
+    margin-bottom:35px;
+
+    font-size:15px;
 
 }
 
 
+
+/* Inputs */
 
 .input-group {
 
-    margin-bottom: 20px;
+    margin-bottom:22px;
 
 }
-
 
 
 .input-group label {
 
-    color: #f1f5f9;
+    display:block;
 
-    display: block;
+    color:#e5e7eb;
 
-    margin-bottom: 6px;
+    font-size:14px;
 
-    font-size: 14px;
+    margin-bottom:7px;
 
 }
 
@@ -86,19 +102,21 @@
 
 .input-group input {
 
-    width: 100%;
+    width:100%;
 
-    padding: 12px;
+    padding:14px;
 
-    background: #121417;
+    background:#121417;
 
-    border: 1px solid #3f4650;
+    border:
 
-    border-radius: 5px;
+        1px solid #3f4650;
 
-    color: white;
+    border-radius:6px;
 
-    font-size: 16px;
+    color:white;
+
+    font-size:16px;
 
 }
 
@@ -106,31 +124,39 @@
 
 .input-group input:focus {
 
-    outline: none;
+    outline:none;
 
-    border-color: #b91c1c;
+    border-color:#b91c1c;
 
 }
 
 
 
+/* Login Button */
+
 .login-card button {
 
-    width: 100%;
+    width:100%;
 
-    background: #b91c1c;
+    padding:14px;
 
-    color: white;
+    margin-top:10px;
 
-    padding: 14px;
+    background:#b91c1c;
 
-    border: none;
+    border:none;
 
-    border-radius: 6px;
+    border-radius:6px;
 
-    font-size: 16px;
+    color:white;
 
-    cursor: pointer;
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
 
 }
 
@@ -138,18 +164,20 @@
 
 .login-card button:hover {
 
-    background: #ef4444;
+    background:#dc2626;
 
 }
 
 
 
+/* Error */
+
 #errorMessage {
 
-    color: #ef4444;
+    color:#ef4444;
 
-    text-align: center;
+    text-align:center;
 
-    margin-top: 15px;
+    margin-top:15px;
 
 }
