@@ -2,7 +2,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 
 import {
-    getAuth
+    getAuth,
+    setPersistence,
+    browserSessionPersistence
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
 import {
@@ -29,6 +31,8 @@ const app = initializeApp(firebaseConfig);
 // Services
 
 const auth = getAuth(app);
+
+setPersistence(auth, browserSessionPersistence);
 
 const db = getFirestore(app);
 
