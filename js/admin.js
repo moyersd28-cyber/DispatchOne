@@ -8,8 +8,12 @@ import {
 
 import {
     doc,
-    getDoc
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    getDoc,
+    collection,
+    getDocs,
+    query,
+    where
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 
 
