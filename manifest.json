@@ -1,11 +1,15 @@
 {
+  "id": "/DispatchOne/",
   "name": "DispatchOne",
   "short_name": "DispatchOne",
   "description": "Volunteer Fire Dispatch & Response System",
-  "start_url": "/",
-  "scope": "/",
+
+  "start_url": "/DispatchOne/",
+  "scope": "/DispatchOne/",
+
   "display": "standalone",
   "orientation": "portrait",
+
   "background_color": "#121417",
   "theme_color": "#b91c1c",
 
