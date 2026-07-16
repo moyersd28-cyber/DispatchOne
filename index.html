@@ -65,6 +65,11 @@
     </div>
 
     <script type="module" src="js/auth.js"></script>
-
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+}
+</script>
+    
 </body>
 </html>
