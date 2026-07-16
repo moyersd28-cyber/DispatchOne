@@ -10,6 +10,8 @@ import {
     getDoc
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
+import { hideSplash } from "./splash.js";
+
 const loginForm = document.getElementById("loginForm");
 const errorMessage = document.getElementById("errorMessage");
 
@@ -34,9 +36,20 @@ loginForm.addEventListener("submit", async (e) => {
 
 });
 
+const splashStart = Date.now();
+
 onAuthStateChanged(auth, async (user) => {
 
-    if (!user) return;
+    // Make sure the splash is visible for at least 1.8 seconds
+    const elapsed = Date.now() - splashStart;
+    const remaining = Math.max(0, 1800 - elapsed);
+
+    await new Promise(resolve => setTimeout(resolve, remaining));
+
+    if (!user) {
+        hideSplash();
+        return;
+    }
 
     try {
 
@@ -46,34 +59,42 @@ onAuthStateChanged(auth, async (user) => {
 
         if (!userSnap.exists()) {
 
+            hideSplash();
             errorMessage.textContent = "User profile not found.";
-
             return;
 
         }
 
         const data = userSnap.data();
 
-        switch (data.role) {
+        hideSplash();
 
-            case "admin":
-                window.location.href = "admin.html";
-                break;
+        setTimeout(() => {
 
-            case "dispatcher":
-                window.location.href = "dispatcher.html";
-                break;
+            switch (data.role) {
 
-            case "firefighter":
-                window.location.href = "firefighter.html";
-                break;
+                case "admin":
+                    window.location.href = "admin.html";
+                    break;
 
-            default:
-                errorMessage.textContent = "Unknown user role.";
+                case "dispatcher":
+                    window.location.href = "dispatcher.html";
+                    break;
 
-        }
+                case "firefighter":
+                    window.location.href = "firefighter.html";
+                    break;
+
+                default:
+                    errorMessage.textContent = "Unknown user role.";
+
+            }
+
+        }, 500);
 
     } catch (err) {
+
+        hideSplash();
 
         console.error(err);
 
