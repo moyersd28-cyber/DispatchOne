@@ -106,3 +106,42 @@ button:hover {
     background:#374151;
 
 }
+
+/* Mobile Layout */
+
+@media (max-width: 768px) {
+
+    .admin-container {
+
+        padding: 15px;
+
+    }
+
+    .admin-header h1 {
+
+        font-size: 28px;
+
+    }
+
+    .status-grid,
+    .overview-grid,
+    .action-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .status-box,
+    .stat-card {
+
+        width: 100%;
+
+    }
+
+    button {
+
+        width: 100%;
+
+    }
+
+}
