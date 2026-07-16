@@ -1,0 +1,99 @@
+#splashScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#121417;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+    transition:opacity .5s ease;
+
+}
+
+#splashScreen.hidden{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+.splash-content{
+
+    text-align:center;
+
+    width:420px;
+
+}
+
+.splash-logo{
+
+    width:130px;
+
+    margin-bottom:25px;
+
+}
+
+.splash-title{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+.splash-subtitle{
+
+    color:#94a3b8;
+
+    margin-bottom:40px;
+
+}
+
+.boot-status{
+
+    color:#e5e7eb;
+
+    font-family:monospace;
+
+    margin-bottom:20px;
+
+}
+
+.progress{
+
+    height:8px;
+
+    background:#2b3138;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    width:0;
+
+    background:#b91c1c;
+
+    transition:width .4s ease;
+
+}
