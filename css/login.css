@@ -24,11 +24,11 @@
 
 .login-card {
 
-    width: 400px;
+    width: min(90vw, 400px);
 
     background: #1e2329;
 
-    padding: 45px;
+    padding: clamp(24px, 5vw, 45px);
 
     border-radius: 12px;
 
@@ -36,8 +36,7 @@
 
     border-top: 6px solid #b91c1c;
 
-    box-shadow:
-        0 15px 35px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 
 }
 
@@ -49,13 +48,13 @@
 
     margin: 0;
 
-    text-align:center;
+    text-align: center;
 
-    color:#ffffff;
+    color: #ffffff;
 
-    font-size:42px;
+    font-size: clamp(32px, 6vw, 42px);
 
-    letter-spacing:2px;
+    letter-spacing: 2px;
 
 }
 
@@ -190,45 +189,7 @@
 
     .login-container {
 
-        padding: 20px;
-
-    }
-
-    .login-card {
-
-        width: 100%;
-
-        max-width: 400px;
-
-        padding: 30px;
-
-    }
-
-    .login-card h1 {
-
-        font-size: 32px;
-
-    }
-
-    .subtitle {
-
-        font-size: 14px;
-
-    }
-
-    .input-group input {
-
-        padding: 14px;
-
-        font-size: 16px;
-
-    }
-
-    .login-card button {
-
-        padding: 14px;
-
-        font-size: 16px;
+        padding: 16px;
 
     }
 
