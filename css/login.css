@@ -24,7 +24,7 @@
 
 .login-card {
 
-    width: min(84vw, 360px);
+    width: min(400px, 92vw);
 
     background: #1e2329;
 
@@ -181,15 +181,108 @@
 
 }
 
-/* =========================
-   Mobile Login
-========================= */
+/* ==========================================
+   Mobile Login Layout
+========================================== */
 
 @media (max-width: 768px) {
 
     .login-container {
 
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        padding: 24px;
+
+        background:
+            radial-gradient(
+                circle at top,
+                #2b3138 0%,
+                #121417 55%
+            );
+
+    }
+
+    .login-card {
+
+        width: 100%;
+
+        max-width: none;
+
+        background: transparent;
+
+        border: none;
+
+        border-top: none;
+
+        border-radius: 0;
+
+        box-shadow: none;
+
+        padding: 0;
+
+    }
+
+    .login-card h1 {
+
+        font-size: 2.6rem;
+
+        text-align: center;
+
+        margin-bottom: 10px;
+
+    }
+
+    .subtitle {
+
+        text-align: center;
+
+        font-size: 1.1rem;
+
+        margin-bottom: 40px;
+
+    }
+
+    .input-group {
+
+        margin-bottom: 22px;
+
+    }
+
+    .input-group label {
+
+        font-size: 18px;
+
+        margin-bottom: 10px;
+
+    }
+
+    .input-group input {
+
+        width: 100%;
+
         padding: 16px;
+
+        font-size: 18px;
+
+        border-radius: 12px;
+
+    }
+
+    .login-card button {
+
+        width: 100%;
+
+        padding: 18px;
+
+        margin-top: 20px;
+
+        border-radius: 12px;
+
+        font-size: 22px;
 
     }
 
