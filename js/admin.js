@@ -11,11 +11,12 @@ import {
     getDoc,
     collection,
     getDocs,
-    query,
-    where
+    setDoc
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-
+import {
+    createUserWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
 onAuthStateChanged(auth, async (user)=>{
 
@@ -133,6 +134,91 @@ document.getElementById("logout").onclick = ()=>{
     signOut(auth);
 
     window.location.href="index.html";
+
+
+};
+
+const createButton = document.getElementById("createMember");
+
+
+createButton.onclick = async ()=>{
+
+
+const name =
+document.getElementById("memberName").value;
+
+
+const email =
+document.getElementById("memberEmail").value;
+
+
+const role =
+document.getElementById("memberRole").value;
+
+
+
+if(!name || !email){
+
+alert("Please fill in all fields");
+
+return;
+
+}
+
+
+
+try{
+
+
+const password =
+"DispatchOne123";
+
+
+const result =
+await createUserWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+
+
+await setDoc(
+doc(db,"users",result.user.uid),
+{
+
+
+name:name,
+
+email:email,
+
+role:role,
+
+department:
+document.getElementById("departmentName").textContent,
+
+
+active:true,
+
+createdAt:
+new Date()
+
+
+});
+
+
+alert("Member Created");
+
+
+}
+catch(error){
+
+console.error(error);
+
+alert(error.message);
+
+
+}
 
 
 };
