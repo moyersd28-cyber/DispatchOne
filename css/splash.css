@@ -97,3 +97,41 @@
     transition:width .4s ease;
 
 }
+
+/* =========================
+   Mobile Splash
+========================= */
+
+@media (max-width: 768px) {
+
+    .splash-content {
+
+        width: 90%;
+
+    }
+
+    .splash-logo {
+
+        width: 90px;
+
+    }
+
+    .splash-title {
+
+        font-size: 30px;
+
+    }
+
+    .splash-subtitle {
+
+        font-size: 14px;
+
+    }
+
+    .boot-status {
+
+        font-size: 14px;
+
+    }
+
+}
