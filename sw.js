@@ -1,4 +1,4 @@
-const CACHE = "dispatchone-v1";
+const CACHE = "dispatchone-v2";
 
 const FILES = [
   "/",
