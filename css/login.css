@@ -24,11 +24,11 @@
 
 .login-card {
 
-    width: min(90vw, 400px);
+    width: min(84vw, 360px);
 
     background: #1e2329;
 
-    padding: clamp(24px, 5vw, 45px);
+    padding: 24px;
 
     border-radius: 12px;
 
@@ -52,7 +52,7 @@
 
     color: #ffffff;
 
-    font-size: clamp(32px, 6vw, 42px);
+    font-size: clamp(26px, 7vw, 40px);
 
     letter-spacing: 2px;
 
@@ -103,7 +103,7 @@
 
     width:100%;
 
-    padding:14px;
+    padding:12px;
 
     background:#121417;
 
@@ -137,7 +137,7 @@
 
     width:100%;
 
-    padding:14px;
+    padding:12px;
 
     margin-top:10px;
 
