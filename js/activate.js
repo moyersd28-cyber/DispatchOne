@@ -100,27 +100,4 @@ activateButton.onclick = async () => {
 
         alert("Account activated successfully!");
 
-        // Redirect by role
-        switch (invitation.role) {
-
-            case "admin":
-                window.location.href = "admin.html";
-                break;
-
-            case "dispatcher":
-                window.location.href = "dispatch.html";
-                break;
-
-            default:
-                window.location.href = "firefighter.html";
-                break;
-        }
-
-    } catch (error) {
-
-        console.error(error);
-
-        alert(error.message);
-    }
-
-};
+window.location.href = "index.html";
