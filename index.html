@@ -107,6 +107,13 @@
                     Login
                 </button>
 
+               <div class="login-divider">
+    <span>OR</span>
+</div>
+
+<a href="activate.html" class="secondary-button">
+    Activate Account
+</a>
             </form>
 
             <p id="errorMessage"></p>
@@ -120,16 +127,6 @@
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/DispatchOne/sw.js");
 }
-</script>
-
-   <script>
-window.addEventListener("load", () => {
-    alert(
-        `Screen: ${screen.width} × ${screen.height}\n` +
-        `Inner: ${window.innerWidth} × ${window.innerHeight}\n` +
-        `DevicePixelRatio: ${window.devicePixelRatio}`
-    );
-});
 </script>
    
 </body>
