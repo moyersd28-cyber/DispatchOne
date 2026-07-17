@@ -287,3 +287,41 @@
     }
 
 }
+
+.login-divider{
+    display:flex;
+    align-items:center;
+    margin:20px 0;
+    color:#9ca3af;
+    font-size:.9rem;
+}
+
+.login-divider::before,
+.login-divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:#374151;
+}
+
+.login-divider span{
+    margin:0 12px;
+}
+
+.secondary-button{
+    display:block;
+    width:100%;
+    padding:14px;
+    border:2px solid #b91c1c;
+    border-radius:8px;
+    text-align:center;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    transition:.2s;
+    box-sizing:border-box;
+}
+
+.secondary-button:hover{
+    background:#b91c1c;
+}
