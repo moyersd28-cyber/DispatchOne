@@ -101,3 +101,15 @@ activateButton.onclick = async () => {
         alert("Account activated successfully!");
 
 window.location.href = "index.html";
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        alert(error.message);
+
+    }
+
+};
