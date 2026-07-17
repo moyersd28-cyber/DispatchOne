@@ -11,7 +11,8 @@ import {
     getDoc,
     collection,
     getDocs,
-    setDoc
+    setDoc,
+    addDoc
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 import {
@@ -169,44 +170,21 @@ return;
 
 try{
 
-
-const password =
-"DispatchOne123";
-
-
-const result =
-await createUserWithEmailAndPassword(
-auth,
-email,
-password
+await addDoc(
+    collection(db, "pendingUsers"),
+    {
+        name: name,
+        email: email.toLowerCase(),
+        role: role,
+        department: document.getElementById("departmentName").textContent,
+        active: true,
+        createdAt: new Date()
+    }
 );
 
-
-
-await setDoc(
-doc(db,"users",result.user.uid),
-{
-
-
-name:name,
-
-email:email,
-
-role:role,
-
-department:
-document.getElementById("departmentName").textContent,
-
-
-active:true,
-
-createdAt:
-new Date()
-
-
-});
-
-
+alert("Invitation created successfully!");
+    
+    
 alert("Member Created");
 
 
@@ -222,3 +200,7 @@ alert(error.message);
 
 
 };
+
+document.getElementById("memberName").value = "";
+document.getElementById("memberEmail").value = "";
+document.getElementById("memberRole").selectedIndex = 0;
