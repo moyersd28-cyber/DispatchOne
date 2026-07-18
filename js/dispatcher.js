@@ -15,7 +15,8 @@ import {
     query,
     where,
     onSnapshot,
-    serverTimestamp
+    serverTimestamp,
+    updateDoc
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 
@@ -159,24 +160,37 @@ function loadCalls(department){
 
                 callsList.innerHTML += `
 
-                <div class="call-card">
+<div class="call-card">
 
-                    <h3>
-                    ${data.type}
-                    </h3>
+    <h3>
+    ${data.type}
+    </h3>
 
-                    <p>
-                    ${data.location}
-                    </p>
+    <p>
+    ${data.location}
+    </p>
 
-                    <p>
-                    Priority:
-                    ${data.priority}
-                    </p>
+    <p>
+    Priority:
+    ${data.priority}
+    </p>
 
-                </div>
 
-                `;
+    <button class="edit-call"
+    data-id="${call.id}">
+        Edit
+    </button>
+
+
+    <button class="close-call"
+    data-id="${call.id}">
+        Close
+    </button>
+
+
+</div>
+
+`;
 
 
             });
@@ -189,9 +203,38 @@ function loadCalls(department){
 
 }
 
+async function closeCall(callId){
 
 
+    await updateDoc(
 
+        doc(db,"calls",callId),
+
+        {
+
+            status:"closed"
+
+        }
+
+    );
+
+
+}
+
+document.querySelectorAll(".close-call")
+.forEach(button=>{
+
+
+    button.onclick = ()=>{
+
+
+        closeCall(button.dataset.id);
+
+
+    };
+
+
+});
 
 
 
