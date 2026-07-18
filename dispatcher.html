@@ -1,1 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<title>DispatchOne Dispatch Center</title>
+
+<link rel="icon" href="assets/favicon.ico">
+
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/dispatcher.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
+<body>
+
+
+<div class="dispatch-container">
+
+
+<header class="dispatch-header">
+
+<h1>
+DispatchOne Dispatch Center
+</h1>
+
+<p id="departmentName">
+Loading Department...
+</p>
+
+</header>
+
+
+
+<div class="dispatch-grid">
+
+
+
+<section class="panel calls-panel">
+
+<h2>
+Active Calls
+</h2>
+
+
+<div id="callsList">
+
+<p>
+No Active Calls
+</p>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="panel units-panel">
+
+<h2>
+Unit Status
+</h2>
+
+
+<div id="unitsList">
+
+<p>
+Loading Units...
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="panel create-call-panel">
+
+
+<h2>
+Create Incident
+</h2>
+
+
+
+<label>
+Incident Type
+</label>
+
+<select id="callType">
+
+<option>
+Structure Fire
+</option>
+
+<option>
+Vehicle Fire
+</option>
+
+<option>
+Medical Emergency
+</option>
+
+<option>
+Traffic Accident
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+
+
+<label>
+Location
+</label>
+
+<input
+id="callLocation"
+placeholder="Incident Location">
+
+
+
+<label>
+Priority
+</label>
+
+<select id="callPriority">
+
+<option>
+Low
+</option>
+
+<option selected>
+High
+</option>
+
+<option>
+Critical
+</option>
+
+</select>
+
+
+
+<label>
+Notes
+</label>
+
+
+<textarea
+id="callNotes"
+placeholder="Additional information">
+</textarea>
+
+
+
+<button id="createCall">
+
+Create Call
+
+</button>
+
+
+
+</section>
+
+
+</div>
+
+
+
+<button id="logout">
+Logout
+</button>
+
+
+</div>
+
+
+
+<script type="module" src="js/dispatcher.js"></script>
+
+
+</body>
+
+</html>
