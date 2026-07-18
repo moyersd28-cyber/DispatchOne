@@ -195,13 +195,30 @@ function loadCalls(department){
 
             });
 
+document
+.querySelectorAll(".close-call")
+.forEach(button => {
 
+
+    button.onclick = () => {
+
+
+        closeCall(button.dataset.id);
+
+
+    };
+
+
+});
+            
         }
 
     );
 
 
 }
+
+
 
 async function closeCall(callId){
 
@@ -404,7 +421,38 @@ document
 };
 
 
+async function closeCall(callId){
 
+
+    try {
+
+
+        await updateDoc(
+
+            doc(db,"calls",callId),
+
+            {
+
+                status:"closed"
+
+            }
+
+        );
+
+
+        console.log("Call closed");
+
+
+    } catch(error){
+
+        console.error(error);
+
+        alert("Unable to close call");
+
+    }
+
+
+}
 
 
 
