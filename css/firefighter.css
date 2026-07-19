@@ -1,0 +1,252 @@
+/* ===========================
+   DispatchOne Firefighter
+   =========================== */
+
+body {
+
+    margin: 0;
+    padding: 0;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.firefighter-container{
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:20px;
+
+}
+
+
+/* Header */
+
+header{
+
+    background:#1f2937;
+
+    border-left:5px solid #b91c1c;
+
+    border-radius:10px;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+}
+
+header h1{
+
+    margin:0;
+
+    font-size:32px;
+
+}
+
+header p{
+
+    margin-top:8px;
+
+    color:#cbd5e1;
+
+}
+
+
+/* Cards */
+
+.profile-card,
+.status-card,
+.incident-card{
+
+    background:#1f2937;
+
+    border-radius:10px;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    border:1px solid #374151;
+
+}
+
+.profile-card h2{
+
+    margin:0;
+
+}
+
+.profile-card p{
+
+    color:#9ca3af;
+
+    margin-top:5px;
+
+}
+
+
+/* Status Badge */
+
+#statusBadge{
+
+    margin:20px auto;
+
+    width:220px;
+
+    text-align:center;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    padding:18px;
+
+    border-radius:10px;
+
+}
+
+.available{
+
+    background:#16a34a;
+
+}
+
+.unavailable{
+
+    background:#dc2626;
+
+}
+
+
+/* Incident */
+
+#incidentContent{
+
+    margin-top:15px;
+
+    line-height:1.7;
+
+    color:#e5e7eb;
+
+}
+
+
+/* Buttons */
+
+button{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#b91c1c;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+button:hover{
+
+    background:#991b1b;
+
+}
+
+
+/* Response Buttons */
+
+.response-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.station-btn{
+
+    background:#2563eb;
+
+}
+
+.station-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+.scene-btn{
+
+    background:#16a34a;
+
+}
+
+.scene-btn:hover{
+
+    background:#15803d;
+
+}
+
+.unable-btn{
+
+    background:#dc2626;
+
+}
+
+.unable-btn:hover{
+
+    background:#b91c1c;
+
+}
+
+
+/* Logout */
+
+#logout{
+
+    background:#374151;
+
+}
+
+#logout:hover{
+
+    background:#4b5563;
+
+}
+
+
+/* Desktop */
+
+@media(min-width:900px){
+
+    .firefighter-container{
+
+        max-width:900px;
+
+    }
+
+}
