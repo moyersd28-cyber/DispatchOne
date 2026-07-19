@@ -220,23 +220,6 @@ document
 
 
 
-async function closeCall(callId){
-
-
-    await updateDoc(
-
-        doc(db,"calls",callId),
-
-        {
-
-            status:"closed"
-
-        }
-
-    );
-
-
-}
 
 document.querySelectorAll(".close-call")
 .forEach(button=>{
