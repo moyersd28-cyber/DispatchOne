@@ -186,7 +186,14 @@ function playDispatchAlert(call){
     dispatchTone.currentTime = 0;
 
 
-    dispatchTone.play()
+    if(alertsEnabled){
+
+    dispatchTone.currentTime = 0;
+
+    dispatchTone.play();
+
+}
+        
     .catch(error=>{
 
         console.log(
@@ -207,6 +214,62 @@ function playDispatchAlert(call){
 
 
 }
+
+const dispatchTone = new Audio(
+    "assets/audio/dispatch-tone.mp3"
+);
+
+let alertsEnabled =
+localStorage.getItem("alertsEnabled") === "true";
+
+document
+.getElementById("enableAlerts")
+.onclick = async ()=>{
+
+
+    try {
+
+
+        dispatchTone.volume = 0;
+
+
+        await dispatchTone.play();
+
+
+        dispatchTone.pause();
+
+        dispatchTone.currentTime = 0;
+
+
+        dispatchTone.volume = 1;
+
+
+        localStorage.setItem(
+            "alertsEnabled",
+            "true"
+        );
+
+
+        alertsEnabled = true;
+
+
+        alert(
+            "Dispatch tones enabled!"
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+        alert(
+            "Unable to enable tones."
+        );
+
+    }
+
+
+};
 
 function displayIncident(call){
 
