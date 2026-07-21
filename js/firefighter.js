@@ -147,38 +147,31 @@ function listenForCalls(department){
     );
 
 
-    onSnapshot(
-        callsQuery,
-        (snapshot)=>{
+onSnapshot(callsQuery, (snapshot) => {
 
+    if (snapshot.empty) {
 
-            snapshot.forEach((call)=>{
+        clearIncident();
 
+        lastAlertedCall = null;
 
-                if(call.id === lastAlertedCall){
+        return;
 
-                    return;
+    }
 
-                }
+    snapshot.forEach((call) => {
 
-
-                lastAlertedCall = call.id;
-
-
-                playDispatchAlert(
-                    call.data()
-                );
-
-
-            });
-
-
+        if (call.id === lastAlertedCall) {
+            return;
         }
 
-    );
+        lastAlertedCall = call.id;
 
+        playDispatchAlert(call.data());
 
-}
+    });
+
+});
 
 function playDispatchAlert(call){
 
@@ -303,6 +296,23 @@ function displayIncident(call){
             </button>
 
         </div>
+
+    `;
+
+}
+
+function clearIncident() {
+
+    const incidentContent =
+        document.getElementById("incidentContent");
+
+    incidentContent.innerHTML = `
+
+        <h2>No Active Incident</h2>
+
+        <p>
+            Waiting for dispatch...
+        </p>
 
     `;
 
