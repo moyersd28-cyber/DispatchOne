@@ -182,18 +182,11 @@ function listenForCalls(department){
 
 function playDispatchAlert(call){
 
+if(alertsEnabled){
 
     dispatchTone.currentTime = 0;
 
-
-    if(alertsEnabled){
-
-    dispatchTone.currentTime = 0;
-
-    dispatchTone.play();
-
-}
-        
+    dispatchTone.play()
     .catch(error=>{
 
         console.log(
@@ -203,6 +196,7 @@ function playDispatchAlert(call){
 
     });
 
+}
 
     console.log(
         "New Incident:",
