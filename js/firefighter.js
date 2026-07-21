@@ -3,8 +3,6 @@ import { auth, db } from "./firebase-config.js";
 import {
     onAuthStateChanged,
     signOut
-} from "https://www.gstatic.com/listenForCalls(
-    currentUserData.department
 
 import {
     doc,
