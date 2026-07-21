@@ -194,16 +194,19 @@ function playDispatchAlert(call){
             error
         );
 
-    });}
+    });
 
 
     console.log(
-    "New Incident:",
-    call.type
-);
+        "New Incident:",
+        call.type
+    );
 
 
-displayIncident(call);
+    displayIncident(call);
+
+
+}
 
 function displayIncident(call){
 
