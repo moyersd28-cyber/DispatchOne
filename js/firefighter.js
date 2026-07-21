@@ -3,12 +3,17 @@ import { auth, db } from "./firebase-config.js";
 import {
     onAuthStateChanged,
     signOut
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+} from "https://www.gstatic.com/listenForCalls(
+    currentUserData.department
 
 import {
     doc,
     getDoc,
-    updateDoc
+    updateDoc,
+    collection,
+    query,
+    where,
+    onSnapshot
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 const departmentName = document.getElementById("departmentName");
@@ -17,6 +22,12 @@ const memberRole = document.getElementById("memberRole");
 
 const statusBadge = document.getElementById("statusBadge");
 const toggleStatus = document.getElementById("toggleStatus");
+
+const dispatchTone = new Audio(
+    "assets/audio/dispatch-tone.mp3"
+);
+
+let lastAlertedCall = null;
 
 let currentUserData = null;
 
@@ -57,6 +68,10 @@ onAuthStateChanged(auth, async (user) => {
     memberName.textContent = currentUserData.name;
     memberRole.textContent = currentUserData.role;
 
+    listenForCalls(
+    currentUserData.department
+);
+    
     updateStatusUI();
 
 });
@@ -109,3 +124,83 @@ document.getElementById("logout").onclick = () => {
     window.location.href = "index.html";
 
 };
+
+function listenForCalls(department){
+
+
+    const callsQuery = query(
+
+        collection(db,"calls"),
+
+        where(
+            "department",
+            "==",
+            department
+        ),
+
+        where(
+            "status",
+            "==",
+            "dispatched"
+        )
+
+    );
+
+
+    onSnapshot(
+        callsQuery,
+        (snapshot)=>{
+
+
+            snapshot.forEach((call)=>{
+
+
+                if(call.id === lastAlertedCall){
+
+                    return;
+
+                }
+
+
+                lastAlertedCall = call.id;
+
+
+                playDispatchAlert(
+                    call.data()
+                );
+
+
+            });
+
+
+        }
+
+    );
+
+
+}
+
+function playDispatchAlert(call){
+
+
+    dispatchTone.currentTime = 0;
+
+
+    dispatchTone.play()
+    .catch(error=>{
+
+        console.log(
+            "Audio blocked:",
+            error
+        );
+
+    });
+
+
+    console.log(
+        "New Incident:",
+        call.type
+    );
+
+
+}
