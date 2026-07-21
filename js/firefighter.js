@@ -194,7 +194,7 @@ function playDispatchAlert(call){
             error
         );
 
-    });
+    });}
 
 
     console.log(
