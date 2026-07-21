@@ -198,9 +198,56 @@ function playDispatchAlert(call){
 
 
     console.log(
-        "New Incident:",
-        call.type
-    );
+    "New Incident:",
+    call.type
+);
 
+
+displayIncident(call);
+
+function displayIncident(call){
+
+    const incidentContent =
+    document.getElementById("incidentContent");
+
+
+    incidentContent.innerHTML = `
+
+        <h2>
+            🚨 ${call.type}
+        </h2>
+
+        <p>
+            <strong>Location:</strong><br>
+            ${call.location}
+        </p>
+
+        <p>
+            <strong>Priority:</strong><br>
+            ${call.priority}
+        </p>
+
+        <p>
+            ${call.notes || ""}
+        </p>
+
+
+        <div class="response-buttons">
+
+            <button class="station-btn">
+                🚒 Station
+            </button>
+
+            <button class="scene-btn">
+                🚗 Scene
+            </button>
+
+            <button class="unable-btn">
+                ❌ Unable
+            </button>
+
+        </div>
+
+    `;
 
 }
