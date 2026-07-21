@@ -209,10 +209,6 @@ if(alertsEnabled){
 
 }
 
-const dispatchTone = new Audio(
-    "assets/audio/dispatch-tone.mp3"
-);
-
 let alertsEnabled =
 localStorage.getItem("alertsEnabled") === "true";
 
