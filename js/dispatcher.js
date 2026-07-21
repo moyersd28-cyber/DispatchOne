@@ -120,11 +120,11 @@ function loadCalls(department){
             department
         ),
 
-        where(
-            "status",
-            "==",
-            "active"
-        )
+       where(
+    "status",
+    "==",
+    "dispatched"
+)
 
     );
 
@@ -368,34 +368,33 @@ document
 
 
 
-    await addDoc(
+await addDoc(
 
-        collection(db,"calls"),
+    collection(db,"calls"),
 
-        {
+    {
 
-            type:type,
+        type: type,
 
-            location:location,
+        location: location,
 
-            priority:priority,
+        priority: priority,
 
-            notes:notes,
+        notes: notes,
 
-            department:userData.department,
+        department: userData.department,
 
-            status:"active",
+        status: "dispatched",
 
-            assignedUnits:[],
+        dispatchedAt: serverTimestamp(),
 
-            createdBy:user.email,
+        createdBy: user.email,
 
-            createdAt:serverTimestamp()
+        createdAt: serverTimestamp()
 
-        }
+    }
 
-    );
-
+);
 
 
     alert("Call Created");
