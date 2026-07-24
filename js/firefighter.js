@@ -173,6 +173,8 @@ onSnapshot(callsQuery, (snapshot) => {
 
 });
 
+}
+
 function playDispatchAlert(call){
 
 if(alertsEnabled){
